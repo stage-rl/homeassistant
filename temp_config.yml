@@ -1,0 +1,8 @@
+climate.chodba_poschodie:
+  from: 7
+  to: 21
+  room_temp_entity: "sensor.detska_r_teplomer_temperature"
+  base_temp: 21
+  delta_ratio: 0.5
+  target_air_temperature: 22
+  also_in_summer: False
