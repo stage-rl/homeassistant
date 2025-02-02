@@ -32,7 +32,9 @@ for device in config:
     rule = config[device]
     room_temp = float(hass.get_state(entity_id=rule["room_temp_entity"]).state)
     also_in_summer = True if rule["also_in_summer"] == "True" else False
-    if expensive(now) or room_temp >= float(rule["target_air_temperature"]) or (summer and not rule["also_in_summer"]):
+    if summer and not also_in_summer:
+        next
+    if expensive(now) or room_temp >= float(rule["target_air_temperature"]):
         target_temp = 17
     else:
         target_temp =  float(rule["base_temp"]) + (20 - outside_temp) / 4 * float(rule["delta_ratio"])
