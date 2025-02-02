@@ -10,7 +10,7 @@ summer = os.getenv("SUMMER", False)
 if summer == "True":
     summer = True
 
-with open('temp_config.yml', 'r') as file:
+with open('rooms_config.yml', 'r') as file:
     config = yaml.safe_load(file)
 
 now = datetime.datetime.now().time()
